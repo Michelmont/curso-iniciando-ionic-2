@@ -3,7 +3,7 @@ import {Platform, ionicBootstrap, MenuController} from 'ionic-angular';
 import {StatusBar} from 'ionic-native';
 import {HomePage} from './pages/home/home';
 import {MenuTestePage} from './pages/menu-teste/menu-teste';
-
+import {ConnectionService} from './providers/connection-service/connection-service';
 @Component({
   templateUrl: "/build/app.html"
 })
@@ -35,7 +35,7 @@ export class MyApp {
   }
 }
 
-ionicBootstrap(MyApp, [], {
+ionicBootstrap(MyApp, [ConnectionService], {
   menuType:'push',
   platforms: {
     ios: {
